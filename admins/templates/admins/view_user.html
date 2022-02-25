@@ -1,0 +1,65 @@
+{% extends 'layout-admin.html' %}
+{% block title %}
+<title>All Users</title>
+{% endblock%}
+
+{% block main_content %}
+<section class=" bg_img_about1 p-5  d-flex  align-items-center ">
+    <div class="container">
+        <div class=" text-center ">
+            <p class="a_tag text-dark">
+                <a href="index.html" class="text-success">Home</a> / Users
+            </p>
+
+            <h1 class="text-dark display-5">Users</h1>
+
+        </div>
+    </div>
+
+</section>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-10 offset-md-1">
+            {% include 'messages.html' %}
+<!--            <h1 class="text-center">All News</h1>-->
+            <div class="card py-2 px-2">
+<!--                 <a class="btn btn-success btn-sm ms-auto"-->
+<!--                                href="/news/news_form"-->
+<!--                                >Add New News</a>-->
+                <table class="table-striped">
+                    <thead>
+                        <tr>
+                            <th>User Name </th>
+                            <th>Password </th>
+                            <th>Is_Staff</th>
+                            <th>Is_Admin</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    {% for i in user %}
+                    <tr>
+                        <td> {{ i.username }}</td>
+                        <td> {{ i.password }}</td>
+                        <td> {{ i.is_staff }}</td>
+                        <td> {{ i.is_superuser }}</td>
+                        <td>
+<!--                            <a class="btn btn-success btn-sm" href="/news/update_news/{{i.id}}">Edit</a> &nbsp;-->
+                            <a class="btn btn-danger btn-sm"
+                               href="/delete_user/{{i.id}}"
+                               onclick="return confirm('Are you sure want to delete this message ?')" >Delete</a></td>
+
+                    </tr>
+                    {% endfor %}
+
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

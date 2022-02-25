@@ -1,0 +1,75 @@
+{% extends 'layout-admin.html' %}
+{% block title %}
+<title>All News</title>
+{% endblock%}
+
+{% block main_content %}
+
+<style>
+    .tbody, td, tfoot, th, thead, tr {;
+        border-width: 0.1px;
+    }
+    .desc{
+        width:550px !important;
+    }
+    .news_img{
+        width:150px !important;
+    }
+    .action{
+        width:100px;
+    }
+</style>
+<section class=" bg_img_about1 p-5 mt-5 d-flex  align-items-center ">
+    <div class="container">
+        <div class=" text-center ">
+            <p class="a_tag text-dark">
+                <a href="/admins/dashboard" class="text-success">Home</a> / All News
+            </p>
+
+            <h1 class="text-dark display-5">News</h1>
+
+        </div>
+    </div>
+
+</section>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-10 offset-md-1">
+            {% include 'messages.html' %}
+<!--            <h1 class="text-center">All News</h1>-->
+            <div class="card py-2 px-2">
+                 <a class="btn btn-success btn-sm ms-auto"
+                                href="/news/news_form"
+                                >Add New News</a>
+                <table class="table table-striped">
+                    <tr>
+                        <th >News Title </th>
+                        <th >Description Title </th>
+                        <th class="desc">Description </th>
+                        <th>Category </th>
+                        <th class="news_img">Image </th>
+                        <th>Actions</th>
+                    </tr>
+                    {% for i in news %}
+                    <tr>
+                        <td> {{ i.news_title }}</td>
+                        <td> {{ i.news_description_title }}</td>
+                        <td> {{ i.news_description }}</td>
+                        <td> {{ i.category.category_name }}</td>
+                        <td><img src="/{{i.news_image}}" width="200"></td>
+                        <td><a class="btn btn-success btn-sm" href="/news/update_news/{{i.id}}">Edit</a> &nbsp;
+                            <a class="btn btn-danger btn-sm"
+                               href="/news/delete_news/{{i.id}}"
+                               onclick="return confirm('Are you sure want to delete this news ?')" >Delete</a></td>
+
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

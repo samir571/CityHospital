@@ -1,0 +1,78 @@
+{% extends 'layout-doc.html' %}
+{% load static %}
+
+{% block title %}
+<title>News</title>
+{% endblock title %}
+
+
+
+{% block main_content %}
+<!-- Page-1 -->
+<section class=" bg_img_about1 p-5  d-flex  align-items-center ">
+    <div class="container">
+        <div class=" text-center ">
+            <p class="a_tag text-dark">
+                <a href="/doc/dashboard" class="text-success">Home</a> / News
+            </p>
+
+            <h1 class="text-dark display-5"> News</h1>
+
+
+        </div>
+    </div>
+
+</section>
+
+<!-- page-5 news -->
+<section id="instructors" class="p-5 bg_color_cream">
+    <div class="container">
+        <div class=" text-center mb-2">
+            <a href="/doc/categories" class=" btn btn-outline-success ">Show by Category</a>
+        </div>
+
+        <div class="d-flex justify-content-center ">
+            <div class="d-flex flex-wrap row-cols-1 row-cols-md-3 g-4">
+
+                {% for i in news %}
+
+                <div class="text-center text-sm-start rounded box_news p-2">
+
+                    <img src="/{{i.news_image}}" class="img_news rounded " alt="">
+                    <div class="m-3 nav_hover">
+                        <a href="" class="h5 news_txt_style text-dark " data-bs-toggle="modal" data-bs-target="#modal{{i.id}}">{{i.news_title}}</a>
+                    </div>
+                    <p class="card-text m-3">{{i.news_description_title}}</p>
+                    <p class="text-secondary m-3">{{i.category.category_name}}</p>
+                </div>
+
+                <div class="modal fade" id="modal{{i.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">{{i.news_title}}</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="/{{i.news_image}}" class="card-img-top" alt="...">
+                                {{ i.news_description}}
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {% endfor %}
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script>
+
+</script>
+{% endblock main_content %}

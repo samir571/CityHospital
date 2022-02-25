@@ -1,0 +1,79 @@
+{% extends 'layout-admin.html' %}
+{% block title %}
+<title>Doctor</title>
+{% endblock%}
+
+{% block main_content %}
+<style>
+    .tbody, td, tfoot, th, thead, tr {;
+        border-width: 0.1px;
+    }
+    .link{
+        width:30px !important;
+    }
+
+</style>
+<section class=" bg_img_about1 p-5 mt-5 d-flex  align-items-center ">
+    <div class="container">
+        <div class=" text-center ">
+            <p class="a_tag text-dark">
+                <a href="/admins/dashboard" class="text-success">Home</a> / All Doctor
+            </p>
+
+            <h1 class="text-dark display-5">Doctor</h1>
+
+        </div>
+    </div>
+
+</section>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-10 offset-md-1">
+            {% include 'messages.html' %}
+<!--            <h1 class="text-center">All News</h1>-->
+            <div class="card py-2 px-2">
+                 <a class="btn btn-success btn-sm ms-auto"
+                                href="/doctor/doctor_form"
+                                >Add New Doctor</a>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Doctor Name</th>
+                            <th class="link">Doctor facebook</th>
+                            <th class="link">Doctor instagram </th>
+                            <th class="link">Doctor linkedin </th>
+                            <th class="link">Doctor twitter </th>
+                            <th>Category </th>
+                            <th>Image </th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    {% for i in doctor %}
+                    <tr>
+                        <td> {{ i.doctor_name }}</td>
+                        <td> {{ i.doctor_facebook_link }}</td>
+                        <td> {{ i.doctor_instagram_link }}</td>
+                        <td> {{ i.doctor_linkedin_link }}</td>
+                        <td> {{ i.doctor_twitter_link }}</td>
+                        <td> {{ i.category.category_name }}</td>
+                        <td><img src="/{{i.doctor_image}}" width="200"></td>
+                        <td><a class="btn btn-success btn-sm" href="/doctor/update_doctor/{{i.id}}">Edit</a> &nbsp;
+                            <a class="btn btn-danger btn-sm"
+                               href="/doctor/delete_doctor/{{i.id}}"
+                               onclick="return confirm('Are you sure want to delete this doctor ?')" >Delete</a></td>
+
+                    </tr>
+                    {% endfor %}
+
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

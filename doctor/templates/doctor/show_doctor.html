@@ -1,0 +1,125 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% load bootstrap %}
+{% block title %}
+<title>Doctor</title>
+{% endblock title %}
+
+
+
+{% block main_content %}
+
+<style>
+.control-label{
+    display:none;
+}
+.card{
+    border:none;
+}
+.form-control{
+    margin:3% 0;
+    border:none;
+    border-bottom : 1px solid green;
+    border-radius:5px;
+}
+.form-control:focus{
+    box-shadow:none;
+    border:1px solid green;
+    border-bottom : 2px solid green;
+}
+</style>
+
+<!-- Page-1 -->
+<section class=" bg_img_about1 p-5  d-flex  align-items-center ">
+    <div class="container">
+        <div class=" text-center ">
+            <p class="a_tag text-dark">
+                <a href="/" class="text-success">Home</a> / Doctors
+            </p>
+
+            <h1 class="text-dark display-5"> Doctors</h1>
+
+
+        </div>
+    </div>
+
+</section>
+
+<!-- page-5 doctor -->
+<section id="instructors" class="p-5 bg-light">
+    <div class="team-area">
+        <div class="container">
+            <div class="row">
+                {% for i in doctor %}
+                <div class="col-md-4 col-sm-6 col-lg-3 ">
+                    <div class="single-team">
+                        <div class="img-area">
+                            <img src="/{{i.doctor_image}}" class="img-responsive rounded" alt="">
+                            <div class="social">
+                                <ul class="list-inline doc-social-media">
+                                    <a href="{{i.doctor_facebook_link}}" target="_blank"><i class="bi bi-facebook  mx-1"></i></a>
+                                    <a href="{{i.doctor_instagram_link}}" target="_blank"><i class="bi bi-instagram  mx-1"></i></a>
+                                    <a href="{{i.doctor_linkedin_link}}" target="_blank"><i class="bi bi-linkedin  mx-1"></i></a>
+                                    <a href="{{i.doctor_twitter_link}}" target="_blank"><i class="bi bi-twitter  mx-1"></i></a>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="img-text hover_name">
+                            <h4 class="text-dark">{{i.doctor_name}}</h4>
+                            <h5 class="text-secondary">{{i.category.category_name}}</h5>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Page-6 Appointment -->
+<div class="container">
+    <div class="row ">
+        <div class="text-center mt-3">
+            <h2 class="text-dark">Make an <span class="text-success">Appointment</span></h2>
+        </div>
+
+
+        <div class="col-md-10 offset-md-2">
+    <!--        <h1 class="text-center">Appointment</h1>-->
+              {% include 'messages.html' %}
+            <div class="card py-5">
+            <form class="form myForm" action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ appointment_form | bootstrap_horizontal }}
+                    <button type="submit" class="btn btn-outline-success mt-2">Submit Request</button>
+            </form>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    var form_fields = document.getElementsByTagName('input')
+    form_fields[1].placeholder = "Enter Full Name"
+    form_fields[2].placeholder = "Enter Email"
+    form_fields[3].placeholder = "Enter address"
+    form_fields[4].placeholder = "Enter age"
+    form_fields[5].placeholder = "Enter gender"
+    form_fields[6].placeholder = "Enter date"
+    form_fields[7].placeholder = "Enter number"
+
+
+    var form_fields1 = document.getElementsByTagName('textarea')
+    form_fields1[0].placeholder = "Enter Description"
+
+
+
+   for(field in form_fields){
+   form_fields[field].className += ' my-3'
+   }
+</script>
+
+
+{% endblock main_content %}

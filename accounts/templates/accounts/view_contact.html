@@ -1,0 +1,57 @@
+{% extends 'layout-admin.html' %}
+{% block title %}
+<title>All Contacted messages</title>
+{% endblock%}
+
+{% block main_content %}
+<section class=" bg_img_about1 p-5 mt-5 d-flex  align-items-center ">
+    <div class="container">
+        <div class=" text-center ">
+            <p class="a_tag text-dark">
+                <a href="index.html" class="text-success">Home</a> / Messages
+            </p>
+
+            <h1 class="text-dark display-5">Contacted Messages</h1>
+
+        </div>
+    </div>
+
+</section>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-10 offset-md-1">
+            {% include 'messages.html' %}
+            <div class="card py-2 px-2">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Full name </th>
+                            <th>Email </th>
+                            <th>Subject </th>
+                            <th>message </th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    {% for i in contact %}
+                    <tr>
+                        <td> {{ i.full_name }}</td>
+                        <td> {{ i.email }}</td>
+                        <td> {{ i.subject }}</td>
+                        <td> {{ i.message }}</td>
+                        <td>
+                            <a class="btn btn-danger btn-sm"
+                               href="/delete_contact/{{i.id}}"
+                               onclick="return confirm('Are you sure want to delete this message ?')" >Delete</a></td>
+
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

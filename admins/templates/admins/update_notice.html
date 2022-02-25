@@ -1,0 +1,94 @@
+{% extends 'layout-admin.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% load bootstrap %}
+{% block title %}
+    <title>Update Notice</title>
+{% endblock%}
+
+{% block main_content %}
+<style>
+.form-control:hover{
+    border: 1px solid black;
+}
+.form-control:focus{
+    border: 1px solid #0d6efd;
+    box-shadow: none !important;
+}
+</style>
+
+<section class=" bg_img_about1 p-5 mt-5 d-flex  align-items-center ">
+    <div class="container">
+        <div class=" text-center ">
+            <p class="a_tag text-dark">
+                <a href="/admins/dashboard" class="text-success">Home</a> / All Notice
+            </p>
+
+            <h1 class="text-dark display-5">Update Notice</h1>
+
+        </div>
+    </div>
+
+</section>
+<!--<section class="d-flex align-items-center bg-dark text-light p-5 pt-lg-5 text-center text-sm-start admin-bg">-->
+<!--    <div class="container text-center">-->
+<!--        <div class="ms-auto">-->
+<!--            <p><a href="admins/dashboard" class="admin-font about-a">Home</a>/Update Notice</p>-->
+<!--            <h1 class="admin-font">Update Notice</h1>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+<!--<div class="container py-5 ">-->
+<!--<div class="row">-->
+
+    <div class="col-md-6 offset-md-3">
+<!--        <h1 class="text-center">Add New Category</h1>-->
+          {% include 'messages.html'%}
+        <div class="card py-2 px-2">
+        <form method="POST" novalidate>
+            {% csrf_token %}
+            {% for hidden_field in form_notice.hidden_fields %}
+                {{ hidden_field }}
+            {% endfor %}
+
+            {% for field in form_notice.visible_fields %}
+                <div class="form-group">
+                   {{ field.label_tag }}
+                   {% if form_notice.is_bound %}
+                      {% if field.errors %}
+                          {% render_field field class="form-control is-invalid" %}
+                          {% for error in field.errors %}
+                               <div class="invalid-feedback">
+                                    {{ error }}
+                               </div>
+                          {% endfor %}
+                      {% else %}
+                          {% render_field field class="form-control is-valid" %}
+                      {% endif %}
+                   {% else %}
+                      {% render_field field class="form-control" %}
+                   {% endif %}
+                   {% if field.help_text %}
+                     <small class="form-text text-muted">{{ field.help_text }}</small>
+                   {% endif %}
+                </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+    </div>
+    </div>
+</div>
+</div>
+<script>
+    var form_fields = document.getElementsByTagName('input')
+    form_fields[1].placeholder = "Enter Notice Title"
+
+    var form_fields1 = document.getElementsByTagName('textarea')
+    form_fields1[0].placeholder = "Enter Description"
+
+   for(field in form_fields){
+   form_fields[field].className += ' my-3'
+   }
+</script>
+
+{% endblock %}

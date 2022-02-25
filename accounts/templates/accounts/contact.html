@@ -1,0 +1,106 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% load bootstrap %}
+{% block title %}
+<title>Contact Us</title>
+{% endblock title %}
+
+
+
+{% block main_content %}
+<!-- Page-1 -->
+
+<style>
+.control-label{
+    display:none;
+}
+.card{
+    border:none;
+}
+.form-control{
+    margin:3% 0;
+    border:none;
+    border-bottom : 1px solid green;
+    border-radius:5px;
+}
+.form-control:focus{
+    box-shadow:none;
+    border:1px solid green;
+    border-bottom : 2px solid green;
+}
+</style>
+<section class=" bg_img_about1 p-5  d-flex  align-items-center ">
+    <div class="container">
+        <div class=" text-center ">
+            <p class="a_tag text-dark">
+                <a href="index.html" class="text-success">Home</a> / contact
+            </p>
+
+            <h1 class="text-dark display-5"> Contact Us</h1>
+
+        </div>
+    </div>
+
+</section>
+
+<!-- Page-6 Contact -->
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-8 offset-md-2">
+    <!--        <h1 class="text-center">Add New News</h1>-->
+              {% include 'messages.html' %}
+            <div class="card py-5">
+            <form class="form myForm" action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ contact_form | bootstrap_horizontal }}
+                <button type="submit" class="btn btn-success mt-3">Submit</button>
+            </form>
+        </div>
+        </div>
+    </div>
+</div>
+
+<!--<section class="bg-white p-5 ">-->
+<!--    <div class="container">-->
+<!--        <div class="text-center">-->
+<!--            <form>-->
+<!--                <div class="row mt-5 ">-->
+<!--                    <div class="col-12 col-sm-6 py-2">-->
+<!--                        <input type="text" class="form-control form_transparent" placeholder="Full name">-->
+<!--                    </div>-->
+<!--                    <div class="col-12 col-sm-6 py-2">-->
+<!--                        <input type="text" class="form-control form_transparent" placeholder="Email address..">-->
+<!--                    </div>-->
+<!--                    <div class="col-12 py-2">-->
+<!--                        <input type="text" class="form-control form_transparent" placeholder="Subject">-->
+<!--                    </div>-->
+<!--                    <div class="col-12 py-2">-->
+<!--                        <textarea name="message" id="message" class="form-control form_transparent" rows="6"-->
+<!--                            placeholder="Enter message.."></textarea>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                <button type="submit" class="btn btn-success mt-3">Send Message</button>-->
+<!--            </form>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+
+<script>
+    var form_fields = document.getElementsByTagName('input')
+    form_fields[1].placeholder = "Enter Full Name"
+    form_fields[2].placeholder = "Enter Email"
+    form_fields[3].placeholder = "Enter Subject"
+
+    var form_fields1 = document.getElementsByTagName('textarea')
+    form_fields1[0].placeholder = "Enter Description"
+
+
+
+   for(field in form_fields){
+   form_fields[field].className += ' my-3'
+   }
+</script>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14132.824722470788!2d85.28098577907737!3d27.68002172484993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1814d1da760b%3A0xfa63a4de382523a9!2sKathmandu%2C%2044600!5e0!3m2!1sen!2snp!4v1631175643936!5m2!1sen!2snp" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+{% endblock main_content %}

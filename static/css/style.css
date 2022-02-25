@@ -1,0 +1,346 @@
+span.help-block{color:red;}
+
+/* #######################  index.html ########################## */
+
+.logo_top:hover{
+    color:green !important;
+}
+*{
+    font-family: bignoodletitling;
+}
+.hover_menu i{
+    font-size:30px;
+    transition:all .2s ease;
+}
+
+.navbar-toggler-icon {
+    color:white !important;
+}
+
+
+@media(max-width: 768px){
+    .bg_doc{
+        width: 50%;  
+    }
+}
+
+
+.nav_color a{
+    transition:all .2s ease;
+    color:rgb(0, 0, 0);
+}
+.hover_name h4{
+    transition:all .2s ease;
+
+}
+.hover_name h4:hover{
+    color:green !important;
+}
+.nav_hover a:hover {
+    color:green !important;
+}
+
+
+@media(max-width: 768px){
+    .bg_img1{
+        width:50%;
+    }
+}
+
+.bg_img1{
+    background-image:linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0)) ,  url('../img/index/hcare-down.jpg');
+    height:110vh;
+    width:100%;
+    background-position: center center;
+    background-attachment: fixed;
+    
+}
+
+.bg_appointment{
+    background-image:url(../img/bg_news.jpg);
+    height: 40vh;
+    width:100%;
+    background-position: right center;
+}
+
+.custom-select {
+    height: calc(1.5em + 1.375rem + 2px);
+}
+
+.border_none{
+    border:none !important;
+}
+.bg_img2{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.829),rgba(0, 0, 0, 0.849)) , url(../img/index/dark-hero-2.jpg);
+    width:100%;
+    background-position: center center;
+}
+
+.bg_img_3{
+    /* background-color:#e0e3e2; */
+    background-image: url(../img/index/dark-hero-4.jpg);
+    width:100%;
+    background-position: center center;
+}
+.bg_img_4{
+    background-image: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0)) , url(../img/bg_quotes2.jpg);
+    width:100%;
+    background-position: center center;
+    /* background-attachment:fixed; */
+}
+
+.bg_img_5{
+    background-image:  url(../img/index/dark-hero-7.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* width:100%; */
+    background-position: center center;
+}
+
+.bg_img_6{
+    background-image:  url(../img/bg_news.jpg);
+    width:100%;
+    background-position: center center;
+}
+
+
+.box_news{
+    width:250px;
+
+}
+.img_news{
+    width:100%;
+}
+.news_txt_style{
+    /* width:250px; */
+    text-decoration:none;
+}
+
+
+.mt_neg{
+    margin-top:-50px;
+}
+
+.bg_color_cream{
+    background-color:#F5F9F6;
+}
+.bg_color_footer{
+    background-color:#202020;
+}
+
+
+.box_size{
+    width:200px;
+    border-radius: 20px;
+    display:inline-block;
+}
+
+
+.color_light_black{
+    color:rgb(66, 49, 49);
+}
+
+.footer-menu{
+    position: relative;
+    list-style: none;
+    padding-left: 0;
+}
+.footer-menu a, .footer-contact{
+    text-decoration: none;
+    color:gray;
+    transition:all .2s ease;
+}
+
+.footer-menu a:hover{
+    color:white;
+}
+.footer-contact:hover{
+    color:white;
+}
+
+.footer-social-media a{
+    color:gray;
+}
+
+.footer-social-media a:hover{
+    color:white;
+}
+
+.form_transparent{
+    background: transparent;
+    border:none;
+    border-bottom: 2px solid green;
+    color:gray;
+}
+
+
+
+
+/* #################### About.html ############################ */
+.a_tag a{
+    text-decoration:none;
+}
+.about_page_height{
+    height:40vh;
+}
+
+.bg_img_about1{
+    background-image:linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0)) ,  url(../img/index/hcare-down.jpg);
+    height: 50vh;
+    width:100%;
+    background-position: center center;
+    background-attachment: fixed;
+    
+}
+
+.Doctor-style{
+    background-color:#F5F9F6;
+    height: 100%;
+    padding-bottom: 3%;
+}
+.Doctor-msg-img{
+    width: 125px;
+}
+.Doctor-picture{
+    /* border: 3px solid green;  */
+    width: 100%;
+}
+.Doctor-border{
+    border-radius: 10px; 
+    border: 1px solid green;
+    width: 90%;
+    padding-top: 80px;
+    margin-left: 5%;
+    margin-top: -55px;
+}
+
+
+/* ######################### Contact.html ################### */
+
+#map{
+    height:100%;
+    width:100%;
+    border-radius:10px;
+}
+
+.map_height{
+    height:300px;
+
+}
+
+
+/* News */
+.news_width{
+    width: 60vw;
+}
+
+
+/* ######################### try */
+.color_1{
+    color: rgb(22, 22, 22) !important;
+}
+
+.testi-info-text h4 {
+    font-size: 23px;
+    /* letter-spacing: 2px; */
+}
+
+.testi-info-text p {
+    color: #ccc;
+    line-height: 30px;
+    font-size: 15px;
+}
+
+
+/* ####################### nav-scroll */
+
+/* ################# doc img hover */
+
+.doc-social-media a{
+    font-size: 20px;
+    color:rgb(128, 243, 128);
+}
+
+.doc-social-media a:hover{
+    color:white;
+}
+
+
+.team-area{
+    padding-top: 5%;
+}
+.single-team{
+    background-color: #F5F9F6;
+}
+.single-team:hover .social{
+    cursor: pointer;
+    opacity: 1;
+    transform: rotateY(0deg) scale(1, 1);
+}
+.img-area{
+    overflow: hidden;
+    position: relative;
+}
+.img-area img{
+    width: 100%;
+}
+.img-area:hover img{
+    transform: scale(1.2)
+}
+.img-area img{
+    transition: all 0.4s ease 0s;
+}
+@media (max-width: 768px){
+    .img-area img{
+        display: inline-block;
+    }
+}
+.img-area .social{
+    background-color: rgba(0,0,0,0.7);
+    position: absolute;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition: .5s;
+    transform: rotateY(180deg) scale(0.5, 0.5);
+}
+.img-area .social ul{
+    text-align: center;
+    position: relative;
+    top: 175px;
+}
+.img-area .social ul li a{
+    border: 1px solid #fff;
+    color: #fff;
+    display: block;
+    font-size: 20px;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+.img-area .social ul li a:hover{
+    background-color: #fff;
+    color: #000;
+    border: 1px solid transparent;
+}
+.img-text{
+    padding: 25px;
+    color: #fff;
+    text-align: center;
+}
+.img-text h4{
+    margin: 0 0 5px;
+    font-size: 20px;
+    font-family: bignoodletitling;
+    letter-spacing: 5px;
+}
+.img-text h5{
+    font-size: 17px;
+    text-transform: uppercase;
+}
+ 
+

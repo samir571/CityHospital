@@ -1,0 +1,284 @@
+
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+<title> Doctors </title>
+{% endblock title %}
+
+{% block main_content %}
+
+<style>
+.control-label{
+    display:none;
+}
+.card{
+    border:none;
+}
+.form-control{
+    margin:3% 0;
+    border:none;
+    border-bottom : 2px solid green;
+    border-radius:5px;
+}
+.form-control:focus{
+    box-shadow:none;
+    border-bottom : 2px solid green;
+}
+</style>
+
+<!-- Page-1 -->
+<section class=" bg_img_about1 p-5 d-flex  align-items-center">
+    <div class="container">
+        <div class=" text-center ">
+            <p class="a_tag text-dark">
+                <a href="index.html" class="text-success">Home</a> / Doctors
+            </p>
+
+            <h1 class="text-dark display-5">Our Doctors</h1>
+
+        </div>
+    </div>
+
+</section>
+
+<!-- page-4 doctor -->
+<section id="instructors" class="p-5 bg-light">
+    <div class="team-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-lg-3 ">
+                    <div class="single-team">
+                        <div class="img-area">
+                            <img src="https://i.postimg.cc/qRjsQy6r/1.jpg" class="img-responsive rounded" alt="">
+                            <div class="social">
+                                <ul class="list-inline doc-social-media">
+                                    <a href="#" target="_blank"><i class="bi bi-facebook  mx-1"></i></a>
+                                    <a href="#" target="_blank"><i class="bi bi-instagram  mx-1"></i></a>
+                                    <a href="#" target="_blank"><i class="bi bi-linkedin  mx-1"></i></a>
+                                    <a href="#" target="_blank"><i class="bi bi-twitter  mx-1"></i></a>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="img-text hover_name">
+                            <h4 class="text-dark">Dr. John Doe</h4>
+                            <h5 class="text-secondary">Public Health</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-lg-3 ">
+                    <div class="single-team">
+                        <div class="img-area">
+                            <img src="https://i.postimg.cc/wMMhrMDm/2.jpg" class="img-responsive rounded" alt="">
+                            <div class="social">
+                                <ul class="list-inline doc-social-media">
+                                    <a href="#" target="_blank"><i class="bi bi-facebook  mx-1"></i></a>
+                                    <a href="#" target="_blank"><i class="bi bi-instagram  mx-1"></i></a>
+                                    <a href="#" target="_blank"><i class="bi bi-linkedin  mx-1"></i></a>
+                                    <a href="#" target="_blank"><i class="bi bi-twitter  mx-1"></i></a>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="img-text hover_name">
+                            <h4 class="text-dark">Dr. Dave Wood</h4>
+                            <h5  class="text-secondary">Dardiologist</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-lg-3 ">
+                    <div class="single-team">
+                        <div class="img-area">
+                            <img src="https://i.postimg.cc/PqMYrY4D/3.jpg" class="img-responsive rounded" alt="">
+                            <div class="social">
+                                <ul class="list-inline doc-social-media">
+                                    <a href="#" target="_blank"><i class="bi bi-facebook  mx-1"></i></a>
+                                    <a href="#" target="_blank"><i class="bi bi-instagram  mx-1"></i></a>
+                                    <a href="#" target="_blank"><i class="bi bi-linkedin  mx-1"></i></a>
+                                    <a href="#" target="_blank"><i class="bi bi-twitter  mx-1"></i></a>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="img-text hover_name">
+                            <h4 class="text-dark">Dr. Claire Chedd</h4>
+                            <h5 class="text-secondary">General Health</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-lg-3 ">
+                    <div class="single-team">
+                        <div class="img-area">
+                            <img src="https://i.postimg.cc/PqMYrY4D/3.jpg" class="img-responsive rounded" alt="">
+                            <div class="social">
+                                <ul class="list-inline doc-social-media">
+                                    <a href="#" target="_blank"><i class="bi bi-facebook  mx-1"></i></a>
+                                    <a href="#" target="_blank"><i class="bi bi-instagram  mx-1"></i></a>
+                                    <a href="#" target="_blank"><i class="bi bi-linkedin  mx-1"></i></a>
+                                    <a href="#" target="_blank"><i class="bi bi-twitter  mx-1"></i></a>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="img-text hover_name">
+                            <h4 class="text-dark">Dr. Claire Chedd</h4>
+                            <h5 class="text-secondary">General Health</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-lg-3 ">
+                    <div class="single-team">
+                        <div class="img-area">
+                            <img src="https://i.postimg.cc/PqMYrY4D/3.jpg" class="img-responsive rounded" alt="">
+                            <div class="social">
+                                <ul class="list-inline doc-social-media">
+                                    <a href="#" target="_blank"><i class="bi bi-facebook  mx-1"></i></a>
+                                    <a href="#" target="_blank"><i class="bi bi-instagram  mx-1"></i></a>
+                                    <a href="#" target="_blank"><i class="bi bi-linkedin  mx-1"></i></a>
+                                    <a href="#" target="_blank"><i class="bi bi-twitter  mx-1"></i></a>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="img-text hover_name">
+                            <h4 class="text-dark">Dr. Claire Chedd</h4>
+                            <h5 class="text-secondary">General Health</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-lg-3 ">
+                    <div class="single-team">
+                        <div class="img-area">
+                            <img src="https://i.postimg.cc/PqMYrY4D/3.jpg" class="img-responsive rounded" alt="">
+                            <div class="social">
+                                <ul class="list-inline doc-social-media">
+                                    <a href="#" target="_blank"><i class="bi bi-facebook  mx-1"></i></a>
+                                    <a href="#" target="_blank"><i class="bi bi-instagram  mx-1"></i></a>
+                                    <a href="#" target="_blank"><i class="bi bi-linkedin  mx-1"></i></a>
+                                    <a href="#" target="_blank"><i class="bi bi-twitter  mx-1"></i></a>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="img-text hover_name">
+                            <h4 class="text-dark">Dr. Claire Chedd</h4>
+                            <h5 class="text-secondary">General Health</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-lg-3 ">
+                    <div class="single-team">
+                        <div class="img-area">
+                            <img src="https://i.postimg.cc/PqMYrY4D/3.jpg" class="img-responsive rounded" alt="">
+                            <div class="social">
+                                <ul class="list-inline doc-social-media">
+                                    <a href="#" target="_blank"><i class="bi bi-facebook  mx-1"></i></a>
+                                    <a href="#" target="_blank"><i class="bi bi-instagram  mx-1"></i></a>
+                                    <a href="#" target="_blank"><i class="bi bi-linkedin  mx-1"></i></a>
+                                    <a href="#" target="_blank"><i class="bi bi-twitter  mx-1"></i></a>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="img-text hover_name">
+                            <h4 class="text-dark">Dr. Claire Chedd</h4>
+                            <h5 class="text-secondary">General Health</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-lg-3 ">
+                    <div class="single-team">
+                        <div class="img-area">
+                            <img src="https://i.postimg.cc/PqMYrY4D/3.jpg" class="img-responsive rounded" alt="">
+                            <div class="social">
+                                <ul class="list-inline doc-social-media">
+                                    <a href="#" target="_blank"><i class="bi bi-facebook  mx-1"></i></a>
+                                    <a href="#" target="_blank"><i class="bi bi-instagram  mx-1"></i></a>
+                                    <a href="#" target="_blank"><i class="bi bi-linkedin  mx-1"></i></a>
+                                    <a href="#" target="_blank"><i class="bi bi-twitter  mx-1"></i></a>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="img-text hover_name">
+                            <h4 class="text-dark">Dr. Claire Chedd</h4>
+                            <h5 class="text-secondary">General Health</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Page-6 Appointment -->
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-8 offset-md-2">
+    <!--        <h1 class="text-center">Appointment</h1>-->
+              {% include 'messages.html' %}
+            <div class="card py-5">
+            <form class="form myForm" action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ appointment_form | bootstrap_horizontal }}
+                <button type="submit" class="btn btn-success mt-3">Submit</button>
+            </form>
+        </div>
+        </div>
+    </div>
+</div>
+<!--<section class="bg-white p-5 ">-->
+<!--    <div class="container">-->
+<!--        <div class="text-center">-->
+<!--            <h2 class="text-dark">Make an <span class="text-success">Appointment</span></h2>-->
+<!--            <form>-->
+<!--                <div class="row mt-5 ">-->
+<!--                  <div class="col-12 col-sm-6 py-2">-->
+<!--                    <input type="text" class="form-control form_transparent" id="fullname" placeholder="Full name">-->
+<!--                  </div>-->
+<!--                  <div class="col-12 col-sm-6 py-2">-->
+<!--                    <input type="text" class="form-control form_transparent" id="email" placeholder="Email address..">-->
+<!--                  </div>-->
+<!--                  <div class="col-12 col-sm-6 py-2">-->
+<!--                    <input type="text" class="form-control form_transparent" id="address" placeholder="Address..">-->
+<!--                  </div>-->
+<!--                  <div class="col-12 col-sm-6 py-2">-->
+<!--                    <input type="text" class="form-control form_transparent" id="age" placeholder="Age">-->
+<!--                  </div>-->
+<!--                  <div class="col-12 col-sm-6 py-2">-->
+<!--                    <select name="gender" id="gender" class="form-control form_transparent">-->
+<!--                      <option value="male">Male</option>-->
+<!--                      <option value="female">Female</option>-->
+<!--                      <option value="others">Others</option>-->
+<!--                    </select>-->
+<!--                  </div>-->
+<!--                  <div class="col-12 col-sm-6 py-2">-->
+<!--                    <select name="apt_time" id="apt_time" class="form-control form_transparent">-->
+<!--                      <option value="10am-12pm">10AM to 12PM</option>-->
+<!--                      <option value="12pm-2pm">12PM to 2PM</option>-->
+<!--                      <option value="2pm-4pm">2PM to 4PM</option>-->
+<!--                      <option value="4pm-6pm">4PM to 6PM</option>-->
+<!--                      <option value="6pm-8pm">6PM to 8PM</option>-->
+<!--                    </select>-->
+<!--                  </div>-->
+
+<!--                  <div class="col-12 col-sm-6 py-2">-->
+<!--                    <input type="date" class="form-control form_transparent" id="apt_date">-->
+<!--                  </div>-->
+<!--                  <div class="col-12 col-sm-6 py-2">-->
+<!--                    <select name="departement" id="departement" class="form-control form_transparent">-->
+<!--                      <option value="general">General Health</option>-->
+<!--                      <option value="cardiology">Cardiology</option>-->
+<!--                      <option value="dental">Dental</option>-->
+<!--                      <option value="neurology">Neurology</option>-->
+<!--                      <option value="orthopaedics">Orthopaedics</option>-->
+<!--                    </select>-->
+<!--                  </div>-->
+<!--                  <div class="col-12 py-2">-->
+<!--                    <input type="text" class="form-control form_transparent" id="number" placeholder="Number..">-->
+<!--                  </div>-->
+<!--                  <div class="col-12 py-2">-->
+<!--                    <textarea name="message" id="message" class="form-control form_transparent" rows="6" placeholder="Enter message.."></textarea>-->
+<!--                  </div>-->
+<!--                </div>-->
+
+<!--                <button type="submit" class="btn btn-outline-success mt-3">Submit Request</button>-->
+<!--              </form>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+{% endblock main_content %}

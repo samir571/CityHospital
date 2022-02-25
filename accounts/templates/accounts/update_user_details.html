@@ -1,0 +1,114 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% load bootstrap %}
+{% block title %}
+<title>User Profile</title>
+{% endblock title %}
+
+{% block main_content %}
+
+<style>
+@media(min-width:991px){
+    .div_class{
+        margin:0 25%;
+
+    }
+}
+
+.form-control:hover{
+    border: 1px solid black;
+}
+.form-control:focus{
+    border: 1px solid #0d6efd;
+    box-shadow: none !important;
+}
+
+#id_email:hover{
+    border: 1px solid green !important;
+}
+#id_email:focus{
+    border: 1px solid green !important;
+}
+
+#id_firstname:hover{
+    border: 1px solid green !important;
+}
+#id_firstname:focus{
+    border: 1px solid green !important;
+}
+
+#id_lastname:hover{
+    border: 1px solid green !important;
+}
+#id_lastname:focus{
+    border: 1px solid green !important;
+}
+
+#id_phone:hover{
+    border: 1px solid green !important;
+}
+#id_phone:focus{
+    border: 1px solid green !important;
+}
+
+#id_address:hover{
+    border: 1px solid green !important;
+}
+#id_address:focus{
+    border: 1px solid green !important;
+}
+
+</style>
+
+<section class=" bg_img_about1 p-5  d-flex  align-items-center ">
+    <div class="container">
+        <div class=" text-center ">
+            <p class="a_tag text-dark">
+                <a href="/" class="text-success">Home</a> / Profile
+            </p>
+
+            <h1 class="text-dark display-5">Update Profile</h1>
+            <div class="a_tag">
+                <a href="/profile" class="btn btn-outline-success ">User_Profile</a> |
+                <a href="/update_profile" class="btn btn-outline-success active ">Update_Profile</a> |
+                <a href="/change_user_password" class="btn btn-outline-success ">Change_password</a> |
+                <a href="/previous_appointment" class="btn btn-outline-success ">Previous_appointments</a>
+
+            </div>
+
+        </div>
+    </div>
+
+</section>
+<div class="container my-5 py-5">
+        <div class="">
+            <div class="div_class">
+               {% include 'messages.html' %}
+<!--                <h1 class="text-center">Update Details</h1>-->
+                <div class="card py-2 px-2">
+                    <form class="form myForm" action="" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form | bootstrap_horizontal}}
+                        <button type="submit" class="btn btn-success mt-2">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+</div>
+<script>
+    var form_fields = document.getElementsByTagName('input')
+    form_fields[1].placeholder = 'Enter email';
+    form_fields[2].placeholder = 'Enter Firstname';
+    form_fields[3].placeholder = 'Enter last name';
+    form_fields[4].placeholder = 'Enter phone number';
+    form_fields[5].placeholder = 'Enter address';
+
+    for (var field in form_fields){
+    field.className += ' my-2'
+    }
+
+</script>
+
+
+
+{% endblock main_content %}

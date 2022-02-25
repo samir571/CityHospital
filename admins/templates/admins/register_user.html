@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}
+{% load bootstrap %}
+{% load widget_tweaks %}
+{% block title %}
+    <title>Add User</title>
+{% endblock%}
+
+{% block main_content %}
+
+<!--<section class=" bg_img_about1 p-5  d-flex  align-items-center ">-->
+<!--    <div class="container">-->
+<!--        <div class=" text-center ">-->
+<!--            <p class="a_tag text-dark">-->
+<!--                <a href="index.html" class="text-success">Home</a> / Register-->
+<!--            </p>-->
+
+<!--            <h1 class="text-dark display-5"> Register Now</h1>-->
+
+<!--        </div>-->
+<!--    </div>-->
+
+<!--</section>-->
+
+<div class="container pt-5 py-5 my-5">
+<div class="row">
+    <h2 class="text-center">Registration Form</h2>
+    <div class="col-md-6 offset-md-3">
+<!--        <h1 class="text-center">Add New User</h1>-->
+          {% include 'messages.html' %}
+        <div class="card py-2 px-2">
+<!--        <form class="form myForm" action="" method="POST">-->
+<!--            {% csrf_token %}-->
+<!--            {{ form_register | bootstrap_horizontal }}-->
+<!--            <button type="submit" class="btn btn-success mt-3">Submit</button>-->
+<!--        </form>-->
+            <form method="post" novalidate>
+              {% csrf_token %}
+              {% include 'accounts/decorate_register_form.html' with form=form %}
+              <button type="submit" class="btn btn-success">Submit</button>
+            </form>
+    </div>
+    </div>
+</div>
+</div>
+<script>
+    var form_fields = document.getElementsByTagName('input')
+    form_fields[1].placeholder = "Enter username"
+    form_fields[2].placeholder = "Enter password"
+    form_fields[3].placeholder = "Confirm password"
+
+   for(field in form_fields){
+   form_fields[field].className += ' my-3'
+   }
+</script>
+
+{% endblock %}

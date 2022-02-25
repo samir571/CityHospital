@@ -1,0 +1,268 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% load bootstrap %}
+{% block title %}
+<title>Homepage</title>
+{% endblock title %}
+{% block main_content %}
+
+<style>
+.bg_appointment{
+    background-image:url({% static '/img/bg_news.jpg'%});
+    height: 40vh;
+    width:100%;
+    background-position: right center;
+}
+.control-label{
+    display:none;
+}
+.card{
+    border:none;
+}
+.form-control{
+    margin:3% 0;
+    border:none;
+    border-bottom : 1px solid green;
+    border-radius:5px;
+}
+.form-control:focus{
+    box-shadow:none;
+    border:1px solid green;
+    border-bottom : 2px solid green;
+}
+</style>
+<section class="bg_img1 img-responsive  p-5 text-sm-start d-flex  align-items-center ">
+    <div class="container">
+        <div class=" text-center ">
+
+            <p class="text-dark display-3">  We take <span class="text-success">care</span> </p>
+            <p class="text-dark lead"> We at Healthcare are always fully focused on helping your to overcame any surgeon procedure, <br> with great commitment and easy recovery.</p>
+            <a class="btn btn-success btn-md" href="#login_register.html">Let's Consult</a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Page-2 -->
+<section class="bg_color_cream">
+    <div class="container">
+        <div class="d-flex text-center justify-content-evenly flex-wrap">
+            <div class="mt_neg bg-white box_size">
+                <div class="h1 mb-3">
+                    <i class="bi bi-chat text-success"></i>
+
+                </div>
+                <p>Chat With a Doctor</p>
+            </div>
+
+            <div class="mt_neg bg-white box_size">
+                <div class="h1 mb-3">
+                    <i class="bi bi-shield-plus text-success"></i>
+                </div>
+                <p> <span class="text-success">H</span>-CARE Protection</p>
+            </div>
+            <div class="mt_neg bg-white box_size">
+                <div class="h1 mb-3">
+                    <i class="bi bi-clipboard-plus text-success"></i>
+                </div>
+                <p><span class="text-success">H</span>-CARE Pharmacy</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Page-3 -->
+<section id="learn" class="p-5 bg_color_cream">
+    <div class="container">
+        <div class="row align-items-center justify-content-between">
+            <div class="col-md ">
+                <h2 class="">Welcome To <span class="text-success">Health</span>  Care</h2>
+                <p class="text-secondary">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas repellat, ipsam nulla dolores consectetur consequatur! Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore id optio dolorum architecto numquam eaque voluptatum ipsum, veniam nemo eveniet.
+                </p>
+
+                <a href="/" class="btn btn-outline-success mt-3">
+                    <i class="bi bi-chevron-right"></i> Read more
+                </a>
+            </div>
+
+            <div class="col-md">
+                <img src="{% static 'img/index/bg-doctor.png' %}" class="img-fluid bg_doc" alt="">
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="p-5 bg-light">
+    <div class="team-area">
+        <div class="container">
+            <div class="row">
+                {% for i in doctor %}
+                <div class="col-md-4 col-sm-6 col-lg-3 ">
+                    <div class="single-team">
+                        <div class="img-area">
+                            <img src="/{{i.doctor_image}}" class="img-responsive rounded" alt="">
+                            <div class="social">
+                                <ul class="list-inline doc-social-media">
+                                    <a href="{{i.doctor_facebook_link}}" target="_blank"><i class="bi bi-facebook  mx-1"></i></a>
+                                    <a href="{{i.doctor_instagram_link}}" target="_blank"><i class="bi bi-instagram  mx-1"></i></a>
+                                    <a href="{{i.doctor_linkedin_link}}" target="_blank"><i class="bi bi-linkedin  mx-1"></i></a>
+                                    <a href="{{i.doctor_twitter_link}}" target="_blank"><i class="bi bi-twitter  mx-1"></i></a>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="img-text hover_name">
+                            <h4 class="text-dark">{{i.doctor_name}}</h4>
+                            <h5 class="text-secondary">{{i.category.category_name}}</h5>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- people testimonials -->
+<section  class="p-5 bg_img_4 d-flex  ">
+    <div class="layer mx-auto">
+        <div class="container ">
+            <h2 class="heading my-5  text-center"> What <span class="text-success">Patients</span> Say About Us</h2>
+            <div class="text-center">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="testi-info-text">
+                            <h4 class="text-dark">Best Service i have ever seen</h4>
+                            <p class="text-dark pe-3">
+                                <span><i class="fas fa-quote-left"></i></span> Vivamus magna justo, lacinia eget
+                                consectetur
+                                sed,
+                                convallis at tellus. Nulla
+                                quis lorem ut libero malesuada feugiat.Nulla quis lorem ut libero malesuada
+                                feugiat.
+                                Donec rutrum.
+                                <span class="fa fa-quote-right"></span>
+                            </p>
+                        </div>
+                        <div class="testi-pos">
+                            <p class="text-dark lead"><i><span class="blockquote-footer text-white"></span> ~John Elisa</i>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mt-md-0 mt-5">
+                        <div class="testi-info-text">
+                            <h4 class="text-dark">They have the best doctors.</h4>
+                            <p class="text-dark ps-3">
+                                <span class="fa fa-quote-left"></span> Vivamus magna justo, lacinia eget consectetur
+                                sed,
+                                convallis at tellus. Nulla
+                                quis lorem ut libero malesuada feugiat.Nulla quis lorem ut libero malesuada
+                                feugiat.
+                                Donec rutrum.
+                                <span class="fa  fa-quote-right"></span>
+                            </p>
+                        </div>
+                        <div class="testi-pos">
+                            <p class="text-dark lead"><i><span class="blockquote-footer text-white"></span>~Watson Mary</i>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- page-5 news -->
+<section id="instructors" class="p-5 bg_color_cream">
+    <div class="container">
+        <h2 class="text-center text-dark mb-5"><span class="text-success">Latest</span> News</h2>
+        <div class="d-flex justify-content-center ">
+            <div class="d-flex flex-wrap row-cols-1 row-cols-md-3 g-4">
+
+                {% for i in news %}
+
+                <div class="text-center text-sm-start rounded box_news p-2">
+
+                    <img src="/{{i.news_image}}" class="img_news rounded " alt="">
+                    <div class="m-3 nav_hover">
+                        <a href="" class="h5 news_txt_style text-dark " data-bs-toggle="modal" data-bs-target="#modal{{i.id}}">{{i.news_title}}</a>
+                    </div>
+                    <p class="card-text m-3">{{i.news_description_title}}</p>
+                    <p class="text-secondary m-3">{{i.category.category_name}}</p>
+                </div>
+
+                <div class="modal fade" id="modal{{i.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">{{i.news_title}}</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="/{{i.news_image}}" class="card-img-top" alt="...">
+                                {{ i.news_description}}
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {% endfor %}
+
+            </div>
+        </div>
+        <div class="text-center">
+            <a href="/news/get_news_user" class="btn btn-outline-success mt-3">Read more</a>
+        </div>
+
+
+    </div>
+</section>
+
+
+<section  class="p-5 bg_appointment">
+    <div class="container">
+        <div class="text-center ">
+            <div class="">
+                <h2 class="">Want to make an <span class="text-success">Appointment?</span></h2>
+                <p class="text-secondary">Tired of going to hospital for making an appointment?</p>
+
+                <a href="/doctor/get_doctor_user" class="btn btn-outline-success mt-3">Join Us</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    var form_fields = document.getElementsByTagName('input')
+    form_fields[1].placeholder = "Enter Full Name"
+    form_fields[2].placeholder = "Enter Email"
+    form_fields[3].placeholder = "Enter address"
+    form_fields[4].placeholder = "Enter age"
+    form_fields[5].placeholder = "Enter gender"
+    form_fields[6].placeholder = "Enter date"
+    form_fields[7].placeholder = "Enter number"
+
+
+    var form_fields1 = document.getElementsByTagName('textarea')
+    form_fields1[0].placeholder = "Enter Description"
+
+
+
+   for(field in form_fields){
+   form_fields[field].className += ' my-3'
+   }
+</script>
+
+{% endblock main_content %}
+
+

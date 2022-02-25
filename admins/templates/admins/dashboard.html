@@ -1,0 +1,95 @@
+{% extends 'layout-admin.html' %}
+{% load static %}
+
+{% block title %}
+<title>Homepage</title>
+{% endblock title %}
+{% block main_content %}
+
+<style>
+    .card-body a{
+        text-decoration:none;
+        color:#fff;
+    }
+
+    .card-body a:hover{
+        color:orange;
+    }
+
+</style>
+<section class=" bg_img_about1 p-5 mt-5 d-flex  align-items-center ">
+    <div class="container">
+        <div class=" text-center ">
+
+            <h1 class="text-dark display-5"> Admin</h1>
+
+        </div>
+    </div>
+
+</section>
+
+
+<div class="container pt-5">
+<!--    <h1>Admin Dashboard</h1>-->
+    {% include 'messages.html' %}
+    <div class="row">
+        <div class="col">
+            <div class="card text-white bg-danger mb-3" style="max-width: 35rem;">
+                <div class="card-header text-center">Total Users</div>
+                <div class="card-body">
+                    <a href=""> <h1 class="card-title text-center">{{users}}</h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card text-white bg-primary mb-3" style="max-width: 35rem;">
+                <div class="card-header text-center">Total Patient</div>
+                <div class="card-body">
+                    <a href="/admins/patient">
+                        <h1 class="card-title text-center">{{patient}}</h1></a>
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="card text-white bg-info mb-3" style="max-width: 35rem;">
+                <div class="card-header text-center">Total Doctor</div>
+                <div class="card-body">
+                    <a href="/admins/doctor"><h1 class="card-title text-center">{{doctor}}</h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card text-white bg-warning mb-3" style="max-width: 35rem;">
+                <div class="card-header text-center">Total News</div>
+                <div class="card-body">
+                    <a href="/news/get_news"><h1 class="card-title text-center">{{news}}</h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="row">
+
+        <div class="col">
+            <div class="card text-white bg-success mb-3" style="max-width: 35rem;">
+                <div class="card-header text-center">Total message</div>
+                <div class="card-body">
+                    <a href="/view_contact"><h1 class="card-title text-center">{{message}}</h1></a>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock main_content %}

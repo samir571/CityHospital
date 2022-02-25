@@ -1,0 +1,52 @@
+{% extends 'layout-admin.html' %}
+{% load bootstrap %}
+{% block title %}
+    <title>Add Dcotor</title>
+{% endblock%}
+
+{% block main_content %}
+
+<section class=" bg_img_about1 p-5  d-flex  align-items-center ">
+    <div class="container">
+        <div class=" text-center ">
+            <p class="a_tag text-dark">
+                <a href="/admins/dashboard" class="text-success">Home</a> / Doctor
+            </p>
+
+            <h1 class="text-dark display-5"> Add New Doctor</h1>
+
+        </div>
+    </div>
+
+</section>
+
+<div class="container">
+<div class="row">
+
+    <div class="col-md-6 offset-md-3">
+<!--        <h1 class="text-center">Add New News</h1>-->
+          {% include 'messages.html' %}
+        <div class="card py-2 px-2">
+        <form class="form myForm" action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form_doctor | bootstrap_horizontal }}
+            <button type="submit" class="btn btn-success mt-3">Submit</button>
+        </form>
+    </div>
+    </div>
+</div>
+</div>
+<script>
+    var form_fields = document.getElementsByTagName('input')
+    form_fields[1].placeholder = "Enter Doctor_name"
+    form_fields[2].placeholder = "Enter Doctor_facebook"
+    form_fields[3].placeholder = "Enter Doctor_instagram"
+    form_fields[4].placeholder = "Enter Doctor_Linkedin"
+    form_fields[5].placeholder = "Enter Doctor_twitter"
+
+   for(field in form_fields){
+   form_fields[field].className += ' my-3'
+   }
+</script>
+
+{% endblock %}

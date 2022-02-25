@@ -1,0 +1,55 @@
+{% extends 'layout-admin.html' %}
+{% block title %}
+<title>All Patient</title>
+{% endblock%}
+{% block main_content %}
+
+
+<section class=" bg_img_about1 p-5 mt-5 d-flex  align-items-center ">
+    <div class="container">
+        <div class=" text-center ">
+            <p class="a_tag text-dark">
+                <a href="/admins/dashboard" class="text-success">Home</a> / Doctors
+            </p>
+
+            <h1 class="text-dark display-5">Total Doctors</h1>
+
+        </div>
+    </div>
+
+</section>
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            {% include 'messages.html' %}
+            <div class="card py-2 px-2">
+                <a class="btn btn-success btm-sm ms-auto"
+                href="/admins/register">Add New Doctor</a>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Email</th>
+                            <th>Username</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    {% for i in doctors %}
+                    <tr>
+                        <td> {{ i.email }}</td>
+                        <td> {{ i.username }}</td>
+                        <td><a class="btn btn-primary"
+                               href="/admins/demote/{{i.id}}"
+                               onclick="return confirm('Are You Sure You Want To Demote This Student?')">Demote</a> &nbsp;
+                            <a class="btn btn-danger"
+                               href="/admins/delete_user/{{i.id}}"
+                               onclick="return confirm('Are You Sure You Want To Delete?')">Delete</a></td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

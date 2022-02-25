@@ -1,0 +1,80 @@
+{% extends 'layout-doc.html' %}
+{% load static %}
+
+{% block title %}
+<title>Categories News</title>
+{% endblock title %}
+
+
+
+{% block main_content %}
+<!-- Page-1 -->
+<section class=" bg_img_about1 p-5  d-flex  align-items-center ">
+    <div class="container">
+        <div class=" text-center ">
+            <p class="a_tag text-dark">
+                <a href="/doc/dashboard" class="text-success">Home</a> / News category
+            </p>
+
+            <h1 class="text-dark display-5"> category</h1>
+
+        </div>
+    </div>
+
+</section>
+
+<!-- page-5 news -->
+<section class="news my-5">
+    <div class="container my-5">
+        <div class="news-title">
+            <!--                <h2 class="text-center my-5">Categories</h2>-->
+        </div>
+        <div class="row">
+            {% for i in categories %}
+            <div class="col-md-12">
+                <h1 class="text-center text-uppercase m-5 font-weight-bold">{{i.category_name}} Category</h1>
+            </div>
+            <div class="col-md-12">
+                <div class="d-flex flex-wrap row-cols-1 row-cols-md-3 g-4 news-body">
+                    {% for j in i.news_set.all %}
+
+                    <div class="text-center text-sm-start rounded box_news p-2">
+
+                        <img src="/{{j.news_image}}" class="img_news rounded " alt="">
+                        <div class="m-3 nav_hover">
+                            <a href="" class="h5 news_txt_style text-dark " data-bs-toggle="modal"
+                                data-bs-target="#modal{{j.id}}">{{j.news_title}}</a>
+                        </div>
+                        <p class="card-text m-3">{{j.news_description_title}}</p>
+                        <p class="text-secondary m-3">{{j.category.category_name}}</p>
+                    </div>
+
+                    <div class="modal fade" id="modal{{j.id}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">{{j.news_title}}</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="/{{j.news_image}}" class="card-img-top" alt="...">
+                                    {{ j.news_description}}
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock main_content %}

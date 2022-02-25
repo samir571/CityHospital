@@ -1,0 +1,78 @@
+{% extends 'layout-admin.html' %}
+{% load static %}
+{% load bootstrap %}
+{% block title %}
+<title>User Profile</title>
+{% endblock title %}
+
+{% block main_content %}
+
+<section class=" bg_img_about1 p-5 mt-5 d-flex  align-items-center ">
+    <div class="container">
+        <div class=" text-center ">
+            <p class="a_tag text-dark">
+                <a href="/admins/dashboard" class="text-success">Home</a> / All Appointments
+            </p>
+
+            <h1 class="text-dark display-5">Appointments</h1>
+
+        </div>
+    </div>
+
+</section>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-10 offset-md-1">
+            {% include 'messages.html' %}
+<!--            <h1 class="text-center">All News</h1>-->
+            <div class="card py-2 px-2">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Full Name</th>
+                            <th >Email</th>
+                            <th >Address</th>
+                            <th >Age</th>
+                            <th >Gender</th>
+                            <th>Date</th>
+                            <th>Number</th>
+                            <th>Message</th>
+                            <th>Faculty</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    {% for i in appointments %}
+                    <tr>
+                        <td> {{ i.full_name }}</td>
+                        <td> {{ i.email }}</td>
+                        <td> {{ i.address }}</td>
+                        <td> {{ i.age }}</td>
+                        <td> {{ i.gender }}</td>
+                        <td> {{ i.date }}</td>
+                        <td> {{ i.number }}</td>
+                        <td> {{ i.message }}</td>
+                        <td> {{ i.category.category_name }}</td>
+                        <td>
+                            <a class="btn btn-danger btn-sm"
+                               href="delete_view_appointment/{{i.id}}"
+                               onclick="return confirm('Are you sure want to delete this appointment ?')" >Delete</a></td>
+
+                    </tr>
+                    {% endfor %}
+
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock main_content %}

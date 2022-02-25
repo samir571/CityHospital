@@ -1,0 +1,79 @@
+{% extends 'layout.html' %}
+{% load widget_tweaks %}
+{% load bootstrap %}
+{% block title %}
+    <title>Login</title>
+{% endblock%}
+
+{% block main_content %}
+<style>
+.card{
+    width:63%;
+    border-radius: 15px;
+}
+label{
+    display:none;
+}
+.form-group {
+    margin-bottom: 1.3rem;
+}
+.login-a a{
+    text-decoration:none;
+}
+.login-a a:hover{
+    text-decoration: underline;
+}
+.btn-contact{border-radius:20px;}
+.form-control{border-radius:15px;}
+#id_password{margin-bottom:-20px !important}
+
+@media (max-width:1401px){
+    .card{
+        width:80%;
+    }
+}
+</style>
+
+<div class="container py-5 my-5">
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+
+          {% include 'messages.html'%}
+        <div class="card py-3 px-4 mx-auto mt-3">
+            <h2 class="text-center admin-font">Login Form</h2>
+            <form class="form myForm" action="" method="POST">
+            {% csrf_token %}
+            {% for field in form_login.visible_fields %}
+                <div class="form-group">
+                   {{ field.label_tag }}
+                   {% render_field field class="form-control" %}
+                   {% if field.help_text %}
+                     <small class="form-text text-muted">{{ field.help_text }}</small>
+                   {% endif %}
+                </div>
+                 {% endfor %}
+
+                <div class="text-end login-a mb-3 me-2">
+                <a href="/reset_password" class="text-success">Forget Password?</a>
+            </div>
+
+            <span class="d-grid gap-2 px-1"><button type="submit" class="btn btn-contact btn-success">Submit</button></span>
+            <div class="text-center p-4 login-a">
+                <span>Not a member? <a href="/register" class="text-success">SignUp Now</a></span>
+            </div>
+        </form>
+    </div>
+    </div>
+</div>
+</div>
+<script>
+    var form_fields = document.getElementsByTagName('input')
+    form_fields[1].placeholder = "Username"
+    form_fields[2].placeholder = "Password"
+
+   for(field in form_fields){
+   form_fields[field].className += ' my-3'
+   }
+</script>
+
+{% endblock %}

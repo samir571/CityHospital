@@ -1,0 +1,75 @@
+{% extends 'layout-admin.html' %}
+{% block title %}
+<title>FAQ</title>
+{% endblock%}
+
+{% block main_content %}
+<style>
+    .table-width{
+        width:20px;
+    }
+    .tbody, td, tfoot, th, thead, tr {;
+        border-width: 0.1px;
+    }
+    .desc{
+        width:550px !important;
+    }
+    .action{
+        width:100px;
+    }
+</style>
+
+<section class=" bg_img_about1 p-5 mt-5  d-flex  align-items-center ">
+    <div class="container">
+        <div class=" text-center ">
+            <p class="a_tag text-dark">
+                <a href="/admins/dashboard" class="text-success">Home</a> / All FAQ
+            </p>
+
+            <h1 class="text-dark display-5">FAQ</h1>
+
+        </div>
+    </div>
+
+</section>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-10 offset-md-1">
+            {% include 'messages.html' %}
+<!--            <h1 class="text-center">All Persons</h1>-->
+            <div class="card py-2 px-2">
+                 <a class="btn btn-success btn-sm ms-auto"
+                                href="/FAQ_form"
+                                >Add New FAQ</a>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>FAQ Question </th>
+                            <th>FAQ Answers </th>
+                            <th class="action">Actions</th>
+                        </tr>
+                    </thead>
+
+                    {% for i in FAQ %}
+                    <tr>
+                        <td> {{ i.question}}</td>
+                        <td> {{ i.answers}}</td>
+                        <td><a class="btn btn-success btn-sm" href="/update_FAQ/{{i.id}}">Edit</a> &nbsp;
+                            <a class="btn btn-danger btn-sm"
+                               href="/delete_FAQ/{{i.id}}"
+                               onclick="return confirm('Are you sure want to delete this FAQ ?')" >Delete</a></td>
+
+                    </tr>
+                    {% endfor %}
+
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends 'layout-doc.html' %}
+{% load static %}
+{% load bootstrap %}
+{% block title %}
+<title>User Profile</title>
+{% endblock title %}
+
+{% block main_content %}
+
+
+<style>
+@media(min-width:767px){
+    .div_class{
+        margin:0 25%;
+
+    }
+}
+
+</style>
+<section class=" bg_img_about1 p-5  d-flex  align-items-center ">
+    <div class="container">
+        <div class=" text-center ">
+            <p class="a_tag text-dark">
+                <a href="/doc/dashboard" class="text-success">Home</a> / Profile
+            </p>
+
+            <h1 class="text-dark display-5">User Profile</h1>
+            <div class="a_tag">
+                <a href="/doc/profile" class="btn btn-outline-success active">User_Profile</a> |
+                <a href="/doc/update_profile" class="btn btn-outline-success ">Update_Profile</a> |
+                <a href="/doc/change_doc_password" class="btn btn-outline-success">Change_password</a> |
+                <a href="/doc/total_appointment" class="btn btn-outline-success">Show_appointments</a>
+
+            </div>
+
+        </div>
+    </div>
+
+</section>
+<div class="container my-5 py-5">
+    <div class="div_class">
+            <h1 class="text-center">Current Details</h1>
+            <div class="card">
+                <div class="card-body text-center">
+                    <img class="rounded-circle" src="/{{request.user.profile.profile_pic}}" width="50%" class="img-fluid">
+
+                </div>
+                <div class="card-footer">
+                    <div class="py-3">Firstname : {{request.user.profile.firstname}}</div>
+                    <div class="py-3">Lastname : {{request.user.profile.lastname}}</div>
+                    <div class="py-3">Email : {{request.user.profile.email}}</div>
+                    <div class="py-3">Phone : {{request.user.profile.phone}}</div>
+                    <div class="py-3">Address : {{request.user.profile.address}}</div>
+                    <div class="py-3">Joined Date : {{request.user.profile.created_date}}</div>
+                </div>
+            </div>
+<!--        <div class="col">-->
+<!--            <div class="col-md-12">-->
+<!--               {% include 'messages.html' %}-->
+<!--                <h1 class="text-center">Update Details</h1>-->
+<!--                <div class="card py-2 px-2">-->
+<!--                    <div class="view-buttn mt-5">-->
+<!--                        <a href="/change_doc_password" class="btn btn-success">Change Password</a>-->
+<!--                    </div>-->
+<!--                    <form class="form myForm" action="" method="POST" enctype="multipart/form-data">-->
+<!--                        {% csrf_token %}-->
+<!--                        {{ form | bootstrap_horizontal}}-->
+<!--                        <button type="submit" class="btn btn-success mt-2">Submit</button>-->
+<!--                    </form>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+
+    </div>
+</div>
+<script>
+    var form_fields = document.getElementsByTagName('input')
+    form_fields[1].placeholder = 'Enter email';
+    form_fields[2].placeholder = 'Enter Firstname';
+    form_fields[3].placeholder = 'Enter last name';
+    form_fields[4].placeholder = 'Enter phone number';
+    form_fields[5].placeholder = 'Enter address';
+
+    for (var field in form_fields){
+    field.className += ' my-2'
+    }
+
+</script>
+
+
+
+{% endblock main_content %}

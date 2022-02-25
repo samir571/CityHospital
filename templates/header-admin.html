@@ -1,0 +1,102 @@
+<!-- Navbar -->
+
+<style>
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+
+      border-radius: 10px;
+      margin-left:9%;
+      display: none;
+      position: absolute;
+      background-color: #F0EFEF;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    .dropdown-content a:hover {background-color:#e4e4e6; color:black !important; border-radius: 10px;}
+
+    .dropdown:hover .dropdown-content {display: block;}
+
+    .category_hover:hover{
+      color:green;
+    }
+
+
+</style>
+
+
+
+    <nav class="navbar navbar-expand-lg py-3 fixed-top nav_color" style="background-color:#e1e2e4">
+        <div class="container">
+            <a href="/admins/dashboard" class="navbar-brand logo_top"> <span class="text-success">CITY</span>-HOSPITAL</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                <span class="hover_menu"><i class="bi bi-list text-success"></i></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id = "navmenu">
+                <ul class="navbar-nav ms-auto ">
+                    <li class="nav-item nav_hover">
+                        <a href="/admins/dashboard" class="nav-link">Home </a>
+                    </li>
+
+                     <div class="dropdown">
+                        <a href="/news/get_category" class="nav-link drop-btn active dropdown-toggle category_hover" style="text-transform:capitalize">
+                            <span class="ps-1 category_hover"> Categories </span>
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="/news/get_category"> News Category</a>
+                            <a href="/doctor/get_category"> Doctor Category</a>
+                        </div>
+                    </div>
+
+
+<!--                    <li class="nav-item nav_hover ">-->
+<!--                        <a href="/news/get_category" class="nav-link {{activate_category}}">N_Category</a>-->
+<!--                    </li>-->
+                    <li class="nav-item nav_hover ">
+                        <a href="/news/get_news" class="nav-link {{activate_news}}">News</a>
+                    </li>
+
+<!--                    <li class="nav-item nav_hover ">-->
+<!--                        <a href="/doctor/get_category" class="nav-link {{activate_category}}">D_Category</a>-->
+<!--                    </li>-->
+                    <li class="nav-item nav_hover ">
+                        <a href="/doctor/get_doctor" class="nav-link {{activate_doctor}}">Doctor</a>
+                    </li>
+                    <li class="nav-item nav_hover ">
+                        <a href="/get_FAQ" class="nav-link {{activate_FAQ}}">FAQ</a>
+                    </li>
+                    <li class="nav-item nav_hover ">
+                        <a href="/admins/get_notice" class="nav-link">Notice</a>
+                    </li>
+                    <li class="nav-item nav_hover ">
+                        <a href="/view_contact" class="nav-link {{activate_contact}}">Messages</a>
+                    </li>
+                    <li class="nav-item nav_hover ">
+                        <a href="/admins/view_appointment" class="nav-link {{activate_contact}}">Appointments</a>
+                    </li>
+                    <li class="nav-item nav_hover ">
+                        <a href="/change_password" class="nav-link {{activate_contact}}">Settings</a>
+                    </li>
+
+
+
+                    <li class="nav-item ">
+                        <a href="/logout" class="btn btn-outline-success btn-md">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>

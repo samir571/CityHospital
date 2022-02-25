@@ -1,0 +1,72 @@
+{% extends 'layout-doc.html' %}
+{% load static %}
+
+{% block title %}
+<title>Noticeboard</title>
+{% endblock title %}
+
+{% block main_content %}
+
+<style>
+    .a_color a{
+    color: black;
+    }
+    .a_color a:hover{
+    color:green;
+    }
+    .hover_card{
+    border: 1px solid green;
+    transition: 0.5s;
+    }
+    .hover_card:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+</style>
+
+<section class=" bg_img_about1 p-5  d-flex  align-items-center ">
+    <div class="container">
+        <div class=" text-center ">
+            <p class="a_tag text-dark">
+                <a href="/doc/dashboard" class="text-success">Home</a> / Notice
+            </p>
+
+            <h1 class="text-dark display-5"> Notice</h1>
+
+        </div>
+    </div>
+
+</section>
+
+
+
+    <section class="news ">
+        <div class="container mb-5 ">
+            <div class="d-flex flex-wrap row-cols-1 row-cols-md-3 g-4 news-body">
+                {% for i in notice %}
+                <div class="col pe-5 my-3 ">
+                    <div class="card news-card hover_card">
+                        <div class="card-body a_tag a_color pb-1">
+                            <a href="{{i.notice_title}}" data-bs-toggle="collapse" data-bs-target="#modal{{i.id}}" class="notice_title"
+                                aria-expanded="false" aria-controls="collapseExample">
+                                <span class="pb-2">{{ i.notice_date }}</span>
+                                <h5 class="card-title p-0">{{i.notice_title}}</h5></a>
+                            <div class="collapse" id="modal{{i.id}}">
+                                <div class="card card-body">
+                                    {{i.notice_description}}
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+<script>
+    var myModal = new bootstrap.Modal(document.getElementById('exampleModal'))
+    myModal.dispose()
+
+</script>
+{% endblock main_content %}
